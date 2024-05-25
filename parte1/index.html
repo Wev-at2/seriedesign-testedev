@@ -4,15 +4,296 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Pet Store</title>
-	<meta name="description" content="">
+	<title>FURIA Home</title>
+	<meta name="description" content="FURIA Apparel. Acesse e compre agora!">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="">
+	<link rel="shortcut icon" href="./img/favicon-300x300.png">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 	<script src="js/script.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="body">
+
+	<header class="header">
+		<div class="header__container header__desktop container">
+			<div class="header__row">
+				<div class="header__menu flex-container">
+					<div class="header__logo">
+						<a href="/">
+							<img src="/parte1/img/svg/furia_esports_logo_vector.svg" alt="FURIA" title="FURIA">
+						</a>
+					</div>
+					<nav>
+						<ul class="header__menu-list">
+							<li class="header__menu-item">
+								<a href="/">Shop all</a>
+							</li>
+							<li class="header__menu-item">
+								<a href="/">Shop all</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header__config">
+					<ul>
+						<li class="config__search">
+							<span>
+								<i class="icon__search"></i>
+							</span>
+
+							<div class="search__wrapper">
+								<div class="headerSearch " itemscope="" itemtype="http://schema.org/WebSite">
+									<meta itemprop="url" content="https://www.jadejade.com.br/">
+									<form id="searchFormHeader" autocomplete="off" method="get" action="/busca" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+										<meta itemprop="target" content="https://www.jadejade.com.br/Busca?busca={busca}">
 
 
+										<button class="btSearch greenBack" type="button" id="btnBusca">
+											buscar <i class="icon isearch"></i>
+										</button>
+										<input type="text" value="" class="inputSearch ac_input" id="txtBuscaPrincipal" itemprop="query-input" name="busca" data-placeholder="Busque aqui.." autocomplete="off" placeholder="Busque aqui..">
 
+
+										<span class="search__close"><i class="fal fa-times"></i></span>
+									</form>
+								</div>
+
+							</div>
+						</li>
+
+						<li class="config__wishlist">
+							<span>
+								<i class="icon__search"></i>
+							</span>
+						</li>
+
+						<li class="config__user">
+							<div class="login__icon">
+								<i class="icon__login"></i>
+							</div>
+
+							<div class="login__wrapper">
+								<div class="headerLogin">
+									<div class="loginHead">
+
+										<span class="textloginp usuario_identificado" style="display:none">
+											Olá <span>{{usuario}} | </span>
+											<a class="fbits-login-link-sair" href="#" onclick="carrinhoLoginSairNovoCheckout(); return false;" rel="nofollow">Sair</a>
+										</span>
+
+										<span class="textloginp usuario_nao_identificado">
+											Olá <span>Visitante</span>, Identifique-se
+											<a class="fbits-login-link-login" href="https://checkout.jadejade.com.br/Login/Authenticate" rel="nofollow">aqui</a>
+											<a class="fbits-login-link-cadastro" href="https://checkout.jadejade.com.br/Login/Cadastro" rel="nofollow">Registre-se</a>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="login__box">
+								<ul>
+									<li><a href="https://checkout.jadejade.com.br/Login/Authenticate" class="login__button">Entrar</a></li>
+									<li><a href="https://checkout.jadejade.com.br/login/cadastro">Cadastre-se</a></li>
+									<li><a href="https://checkout.jadejade.com.br/MinhaConta/Pedido/">Meus Pedidos</a></li>
+								</ul>
+							</div>
+						</li>
+
+						<li class="config__shop">
+							<div class="cart__icon">
+								<i class="icon__cart"></i>
+							</div>
+
+							<div class="cart__wrapper">
+								<div id="fbits-resumo-carrinho" class="carrinho carrinhoHead"><a href="https://checkout.jadejade.com.br/"><i class="icon icart"></i><span class="minicart-qtde-itens">0</span> <span class="minicart-txt-itens">Carrinho Vazio</span></a></div>
+
+							</div>
+
+							<div id="mini__cart">
+								<div class="cart__close"><i class="fal fa-times"></i></div>
+								<div class="finish__buy"><a href="https://checkout.jadejade.com.br/">Finalizar compra</a></div>
+							</div>
+							<div class="mini__cart__mask" style="display:none;width: 100%;height: 100%;background-color: rgba(0,0,0,.5);position: fixed;z-index: 10;top: 0px;left: 0px;cursor:pointer"></div>
+						</li>
+
+						<li class="config__flag">
+							<i class="flag__icon"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="main-content">
+		<section class="fullbanner">
+			<div class="fullbanner__container">
+				<div class="fullbanner__slide">
+					<div class="fullbanner__item">
+						<a href="/">
+							<picture>
+								<source media="(min-width: 769px)" srcset="./img/mainBanner-D.png">
+								<source media="(max-width: 768px)" srcset="./img/mainBanner-M.png">
+								<img class="fullbanner__image" src="./img/mainBanner-D.png" alt="Banner principal da página" title="FURIA X LOUD - GAMEDAY">
+							</picture>
+						</a>
+						<div class="fullbanner__text">
+							<h1 class="fullbanner__title">FURIA DROP 01</h1>
+							<a class="fullbanner__link" href="/">
+								Compre agora
+								<span class="fullbanner__icon">
+									<!-- <img src="" alt=""> -->
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<div class="newsletter" id="fbits-cadastro-newsletter">
+		<div class="newsletter__container container">
+			<div class="newsletter__row">
+				<div class="newsletter__wrapper">
+					<div class="newsletter__title">
+						<span>Assine nossa newsletter!</span>
+						<span>Receba descontos e novidades da Furia por e-mail</span>
+					</div>
+
+					<div class="newsletter__form">
+						<input class="input nome" id="Nome" maxlength="50" name="objNews.Nome" placeholder="Nome" type="text">
+						<input class="input email" id="Email" maxlength="70" name="objNews.Email" placeholder="E-mail" type="text">
+						<input class="btNews" value="Enviar" onclick="cadastroNewsletter(this)" type="submit">
+						<span id="newsletter-mensagem" class="title newsletter-erro"></span>
+					</div>
+				</div>
+
+				<div class="newsletter__social">
+					<ul>
+						<li class="facebook">
+							<a href="https://facebook.com/furiagg" target="_blank" rel="noopener noreferer">
+								<img src="./img/svg/social_facebook.svg" alt="ícone da rede social: facebook" title="facebook">
+							</a>
+						</li>
+						<li class="youtube">
+							<a href="https://youtube.com/@FURIAgg" target="_blank" rel="noopener noreferer">
+								<img src="./img/svg/social_youtube.svg" alt="ícone da rede social: youtube" title="youtube">
+							</a>
+						</li>
+						<li class="twitter">
+							<a href="https://x.com/FURIA" target="_blank" rel="noopener noreferer">
+								<img src="./img/svg/social_x.svg" alt="ícone da rede social: x" title="x">
+							</a>
+						</li>
+						<li class="twitch">
+							<a href="https://twitch.tv/team/furia" target="_blank" rel="noopener noreferer">
+								<img src="./img/svg/social_twitch.svg" alt="ícone da rede social: twitch" title="twitch">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="footer__top">
+			<div class="footer__container container">
+				<div class="footer__row">
+					<div class="footer__menu">
+						<span>Institucional</span>
+
+						<ul>
+							<li><a href="/">Quem somos</a></li>
+							<li><a href="/">Contato</a></li>
+							<li><a href="/">Central de Atendimento</a></li>
+						</ul>
+					</div>
+
+					<div class="footer__menu">
+						<span>Contato</span>
+
+						<ul>
+							<li><span>(11) 3035-0520</span></li>
+							<li><span>Horário de Atendimento</span></li>
+							<li><span>De Segunda à Sexta</span></li>
+							<li><span>das 09h às 18h</span></li>
+							<li><a href="/" target="_blank" rel="noopener noreferer">atendimento@loremipsum.com</a></li>
+							<li><a href="https://api.whatsapp.com/send?phone=" target="_blank" rel="noopener noreferer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+						</ul>
+					</div>
+
+					<div class="footer__menu">
+						<span>Políticas</span>
+
+						<ul>
+							<li><a href="/">Prazos e Entregas</a></li>
+							<li><a href="/">Formas de pagamento</a></li>
+							<li><a href="/">Promoções e Descontos</a></li>
+							<li><a href="/">Política de privacidade</a></li>
+							<li><a href="/">Trocas e devoluções</a></li>
+						</ul>
+					</div>
+
+					<div class="footer__menu">
+						<span>Formas de pagamento</span>
+						<ul class="footer__paymentFlags-list">
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_visa.svg" alt="Ícone de pagamento" title="Ícone de pagamento: Visa">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_mastercard.svg" alt="Ícone de pagamento" title="Ícone de pagamento: MasterCard">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_dinersclub.svg" alt="Ícone de pagamento" title="Ícone de pagamento: DinersClub International">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_hipercard.svg" alt="Ícone de pagamento" title="Ícone de pagamento: Hipercard">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_elo.svg" alt="Ícone de pagamento" title="Ícone de pagamento: Elo">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_disvover.svg" alt="Ícone de pagamento" title="Ícone de pagamento: Discover">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_americanexpress.svg" alt="Ícone de pagamento" title="Ícone de pagamento: American Express">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_aura.svg" alt="Ícone de pagamento" title="Ícone de pagamento: Aura">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_jbc.svg" alt="Ícone de pagamento" title="Ícone de pagamento: JBC">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_boleto.svg" alt="Ícone de pagamento" title="Ícone de pagamento: Boleto">
+							</li>
+							<li class="footer__paymentFlags-item">
+								<img src="./img/svg/payment_pix.svg" alt="Ícone de pagamento" title="Ícone de pagamento: Pix">
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<div class="footer__container container">
+				<div class="footer__row">
+					<div class="footer__copyright">
+						<span>© 2023 FURIA - 42.374.282/0001-37. Em caso de divergência de preços no site, o valor válido é o do Carrinho de compras. Preços e condições de pagamento podem variar de acordo com a disponibilidade de produtos.</span>
+					</div>
+
+					<div class="footer__develop">
+						<p>Desenvolvido por <a class="inlineA" href="https://seriedesign.com.br/" target="_blank" rel="noopener noreferer">SERI.E Design</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>

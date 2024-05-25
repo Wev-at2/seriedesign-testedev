@@ -1,0 +1,930 @@
+header .header__container {
+    position: relative;
+    background-color: #ffffff;
+}
+header .header__desktop.header__fixed {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100%;
+    transition: 450ms ease-in all;
+    -webkit-animation: scrollDown ease-in 450ms;
+    animation: scrollDown ease-in 450ms;
+    border-bottom: 1px solid #d5d5d5;
+}
+header .header__desktop {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+header .header__desktop:before,
+header .header__desktop:after {
+    content: " ";
+    display: table;
+}
+header .header__desktop:after {
+    clear: both;
+}
+header .header__desktop .header__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+header .header__desktop .header__row:before,
+header .header__desktop .header__row:after {
+    content: " ";
+    display: table;
+}
+header .header__desktop .header__row:after {
+    clear: both;
+}
+header .header__desktop .header__row .header__logo {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+}
+header .header__desktop .header__row .header__logo a {
+    display: inline-block;
+}
+header .header__desktop .header__row .header__logo a img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+header .header__desktop .header__row .header__menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+header .header__desktop .header__row .header__menu-list li {
+    position: relative;
+    transition: all 0.4s ease;
+}
+header .header__desktop .header__row .header__menu-list li a {
+    font-family: "Inter", "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #000000;
+    text-transform: uppercase;
+    display: block;
+    transition: all 0.4s ease;
+}
+header .header__desktop .header__row .header__menu-list li a > span {
+    display: none;
+}
+header .header__desktop .header__row .header__menu-item {
+    margin: 0px 15px 0px 0px;
+}
+header .header__desktop .header__row .header__menu-item > a:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    background-color: #000000;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    transition: all 0.2s ease;
+}
+header .header__desktop .header__row .header__menu-item:hover > a:after {
+    height: 4px;
+}
+header .header__desktop .header__row .header__menu-item:last-child {
+    margin: 0px;
+}
+header .header__desktop .header__row .header__menu-item > a {
+    padding: 33px 0px;
+    position: relative;
+}
+header .header__desktop .header__row .header__config {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+header .header__desktop .header__row .header__config ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+header .header__desktop .header__row .header__config ul li {
+    margin: 0px 25px 0px 0px;
+}
+header .header__desktop .header__row .header__config ul li:last-child {
+    margin: 0px;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__wishes
+    a:hover
+    .wishes__icon
+    .icon__wish {
+    filter: invert(1) brightness(1);
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__wishes
+    a
+    .wishes__icon
+    .icon__wish {
+    background: url("https://recursos.jadejade.com.br/i/sd/i-heart.svg")
+        no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 25px;
+    height: 21px;
+    display: inline-block;
+    transition: 350ms ease-in all;
+}
+header .header__desktop .header__row .header__config ul li.config__user {
+    cursor: pointer;
+    position: relative;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user.active
+    .login__icon
+    .icon__login,
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user:hover
+    .login__icon
+    .icon__login {
+    filter: invert(1) brightness(1);
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__icon
+    .icon__login {
+    background: url("https://recursos.jadejade.com.br/i/sd/i-user2.svg")
+        no-repeat;
+    background-size: 22px 25px;
+    background-position: center;
+    width: 22px;
+    height: 25px;
+    display: inline-block;
+    transition: 350ms ease-in all;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__wrapper {
+    display: none;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__box {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 33px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    width: 175px;
+    padding: 7px;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__box
+    ul {
+    display: block;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__box
+    ul
+    li {
+    margin: 0px;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__box
+    ul
+    li:last-child
+    a {
+    border-top: 1px solid #cccccc;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__box
+    ul
+    li
+    a {
+    font-family: "Inter", "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+    display: block;
+    padding: 8px 0px 8px 0px;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__box
+    ul
+    li
+    a:hover {
+    text-decoration: underline;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__user
+    .login__box
+    ul
+    li
+    a.login__button {
+    background-color: #000000;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+}
+header .header__desktop .header__row .header__config ul li.config__shop {
+    position: relative;
+    cursor: pointer;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop.active
+    .cart__icon
+    .icon__cart,
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop:hover
+    .cart__icon
+    .icon__cart {
+    filter: invert(1) brightness(1);
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    .cart__icon
+    .icon__cart {
+    background: url("https://recursos.jadejade.com.br/i/sd/i-cart2.svg")
+        no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 25px;
+    display: inline-block;
+    transition: 350ms ease-in all;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    .cart__wrapper
+    #fbits-resumo-carrinho
+    a {
+    pointer-events: none;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    .cart__wrapper
+    #fbits-resumo-carrinho
+    a
+    .minicart-qtde-itens {
+    position: absolute;
+    bottom: -2px;
+    left: -4px;
+    order: 2;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding: 0;
+    background: #000;
+    border-radius: 100%;
+    font-weight: 500;
+    font-size: 0.625rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    .cart__wrapper
+    #fbits-resumo-carrinho
+    a
+    .minicart-txt-itens {
+    display: none;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    #mini__cart {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 370px;
+    z-index: 999999;
+    background-color: #ffffff;
+    transform: translateX(2000px);
+    transition: 250ms ease-in all;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    #mini__cart.active {
+    transform: translateX(0px);
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    #mini__cart
+    .cart__close {
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    color: #000000;
+    font-size: 24px;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    #mini__cart
+    iframe {
+    width: 100%;
+    height: calc(100vh - 82px);
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    #mini__cart
+    .finish__buy {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__shop
+    #mini__cart
+    .finish__buy
+    a {
+    background-color: #4dc247 !important;
+    border-radius: 0px;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    margin: 20px 15px 20px 15px;
+    padding: 12px;
+    cursor: pointer;
+    display: block;
+}
+header .header__desktop .header__row .header__config ul li.config__search {
+    cursor: pointer;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search.active
+    span
+    .icon__search,
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search:hover
+    span
+    .icon__search {
+    filter: invert(1) brightness(1);
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    span
+    .icon__search {
+    background: url("https://recursos.jadejade.com.br/i/sd/i-search2.svg")
+        no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    transition: 750ms ease-in all;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: -67px;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    background-color: #ffffff;
+    z-index: 2;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch:before,
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch:after {
+    content: " ";
+    display: table;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch:after {
+    clear: both;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    position: relative;
+    z-index: 5;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader:before,
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader:after {
+    content: " ";
+    display: table;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader:after {
+    clear: both;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    #btnBusca {
+    display: none;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    input {
+    width: 100%;
+    border: 0px;
+    padding: 25px 15px;
+    height: auto;
+    font-family: "Inter", "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    text-transform: uppercase;
+    text-align: center;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    input::-moz-placeholder {
+    color: #000000;
+    opacity: 1;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    input:-ms-input-placeholder {
+    color: #000000;
+    opacity: 1;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    input::placeholder {
+    color: #000000;
+    opacity: 1;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    input:-ms-input-placeholder {
+    color: #000000;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    input::-ms-input-placeholder {
+    color: #000000;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    .search__close {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 22px;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    .ac_results {
+    left: 50% !important;
+    top: 73px !important;
+    transform: translateX(-50%) !important;
+    margin: 0px !important;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    .ac_results
+    ul {
+    display: block;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    .ac_results
+    ul
+    h3 {
+    color: #000000;
+    font-family: "Inter", "Montserrat", sans-serif;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    .ac_results
+    ul
+    li
+    a,
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    .ac_results
+    ul
+    li
+    span {
+    color: #000000;
+    font-family: "Inter", "Montserrat", sans-serif;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__search
+    .search__wrapper
+    .headerSearch
+    #searchFormHeader
+    .ac_results
+    ul
+    .autocomplete-powered-by {
+    display: none;
+}
+header .header__desktop .header__row .header__config ul li.config__flag {
+    display: inline-block;
+    line-height: 0;
+}
+header
+    .header__desktop
+    .header__row
+    .header__config
+    ul
+    li.config__flag
+    .flag__icon {
+    background: url("https://recursos.jadejade.com.br/i/sd/bandeira.jpg")
+        no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 28px;
+    height: 17px;
+    display: inline-block;
+}
+header .header__mobile {
+    display: none;
+}
+.task-134 header .header__desktop {
+    min-height: 69px;
+}
+.task-134 header .header__desktop.header__fixed {
+    border-bottom-color: #fff;
+}
+.task-134
+    header
+    .header__desktop
+    .header__row
+    .header__menu
+    > ul.menu
+    > li
+    > a {
+    padding: 28px 0px 28px 0px;
+}
+.task-134
+    header
+    .header__desktop
+    .header__row
+    .header__menu
+    > ul.menu
+    li
+    ul.filho.item0 {
+    top: 70px;
+}
+.slick-arrow svg path {
+    fill: #000000 !important;
+}
+body:not(.task-134) .header__logo a img:not(.huf),
+body:not(.task-134) .menu__logo a img:not(.huf) {
+    display: inline;
+}
+body:not(.task-134) .header__logo a img.huf,
+body:not(.task-134) .menu__logo a img.huf {
+    display: none;
+}
+.task-134 .header__logo a img:not(.huf),
+.task-134 .menu__logo a img:not(.huf) {
+    display: none;
+}
+.task-134 .header__logo a img.huf,
+.task-134 .menu__logo a img.huf {
+    display: inline;
+}
+.task-134 header .header__desktop .header__row .header__logo a img {
+    max-width: 167px;
+}
+.task-134 header .header__mobile .header__row .header__logo a img {
+    width: 133px;
+    max-width: none;
+}
+.task-134
+    header
+    .header__mobile
+    .header__row
+    .header__menu
+    .menu__top
+    .menu__logo
+    a
+    img {
+    max-width: 94px;
+}
+.task-134 header .header__desktop .header__row .header__menu > ul.menu li a {
+    font-family: "Inter", "Montserrat", sans-serif;
+    font-size: 10px;
+}
+@media screen and (max-width: 450px) {
+    .task-134 header .header__mobile .header__container .header__row {
+        justify-content: space-between;
+    }
+    .task-134 header .header__mobile .header__container .header__row:after,
+    .task-134 header .header__mobile .header__container .header__row::before {
+        display: none;
+    }
+    .task-134
+        header
+        .header__mobile
+        .header__container
+        .header__row
+        .header__config {
+        margin-left: 0;
+        padding-left: 0;
+        width: 80px;
+    }
+    .task-134
+        header
+        .header__mobile
+        .header__container
+        .header__row
+        .header__logo {
+        margin-left: 0;
+        padding: 0;
+        width: 133px;
+        max-width: none;
+    }
+}
