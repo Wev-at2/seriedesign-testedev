@@ -55,6 +55,17 @@ header .header__desktop .header__row .header__logo a img {
     max-width: 100%;
     height: auto;
 }
+header .header__desktop .header__row .header__logo a img {
+    filter: drop-shadow(6px 6px 2px transparent);
+    filter: drop-shadow(0px 0px 60px gray);
+    transition: all 0.4s ease;
+}
+header .header__desktop .header__row .header__logo a img:is(:hover, :focus) {
+    transform: scale(1.1);
+    transition: var(--transition);
+    filter: drop-shadow(4px 6px 2px gray);
+    transition: all 0.4s ease;
+}
 
 header .header__desktop .header__row .header__menu-list {
     display: flex;
@@ -89,7 +100,8 @@ header .header__desktop .header__row .header__menu-item > a:after {
     position: absolute;
     left: 0px;
     bottom: 0px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 header .header__desktop .header__row .header__menu-item:hover > a:after {
     height: 4px;

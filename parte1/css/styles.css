@@ -77,46 +77,100 @@
     justify-content: start;
     align-items: center;
 }
-.home__fullbanner .main-banner__item {
-    overflow: hidden;
-    position: relative;
+.main-content {
+    min-height: 20vh;
+    background-color: gray;
 }
-.home__fullbanner .main-banner__text {
-    align-items: center;
-    bottom: 75px;
-    color: #fff;
+.fullbanner {
+    position: relative;
+    overflow: hidden;
+}
+.fullbanner__container {
+    position: relative;
+    max-height: 450px;
+}
+
+.fullbanner__text {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
     gap: 7px;
-    justify-content: center;
-    left: 50%;
+    color: #fff;
     position: absolute;
+    padding-bottom: 4rem;
+    bottom: 0;
+    left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 14.58%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
 }
-.home__fullbanner .main-banner__text h1 {
+.fullbanner__text h1 {
     font-family: "Oswald", sans-serif;
     font-size: 4rem;
     font-weight: 700;
     color: #ffffff;
 }
-.home__fullbanner .main-banner__text a {
+.fullbanner__link {
     font-family: "Roboto", sans-serif;
     font-size: 1.125rem;
     font-weight: 500;
     color: #ffffff;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.4s ease;
 }
-.home__fullbanner .main-banner__text a:after {
+.fullbanner__link:after {
     content: "";
     display: inline-block;
-    width: 120%;
+    width: 101%;
     height: 1px;
     background: #ffffff;
     position: absolute;
     bottom: -0.5rem;
     left: 0;
 }
+.fullbanner__link-icon {
+    border: 0.4rem solid transparent;
+    border-left: 0.4rem solid #ffffff;
+    float: right;
+    transition: all 0.4s ease;
+    width: 0.4rem;
+    height: 0.4rem;
+    position: relative;
+}
+.fullbanner__link-icon::before {
+    content: "";
+    display: inline-block;
+    border: 0.4rem solid transparent;
+    border-left: 0.4rem solid #ffffff;
+    transition: all 0.4s ease;
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    bottom: -0.39rem;
+    left: -0.4rem;
+}
+.fullbanner__link:is(:hover, :focus, :focus-visible) {
+    letter-spacing: 0.4em;
+}
+.fullbanner__link:is(:hover, :focus, :focus-visible)
+    .fullbanner__link-icon::before {
+    transform: translateX(0.4rem);
+}
+
 .fbits-home .banner-sec a {
     display: block;
     width: 100%;
