@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="">
 
 <head>
 	<meta charset="utf-8">
@@ -8,17 +8,19 @@
 	<meta name="description" content="FURIA Apparel. Acesse e compre agora!">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./img/favicon-300x300.png">
-	<link rel="stylesheet" href="css/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/script.js" type="text/javascript"></script>
 </head>
 
 <body class="body">
 
-	<header class="header">
-		<div class="header__container header__desktop container">
+	<header class="header header__fixed">
+		<div class="header__desktop header__container  container">
 			<div class="header__row">
 				<div class="header__menu flex-container">
 					<div class="header__logo">
@@ -29,10 +31,10 @@
 					<nav>
 						<ul class="header__menu-list">
 							<li class="header__menu-item">
-								<a href="/">Shop all</a>
+								<a href="#">Shop all</a>
 							</li>
 							<li class="header__menu-item">
-								<a href="/">Shop all</a>
+								<a href="#">About</a>
 							</li>
 						</ul>
 					</nav>
@@ -40,33 +42,17 @@
 				<div class="header__config">
 					<ul>
 						<li class="config__search">
-							<span>
-								<i class="icon__search"></i>
-							</span>
-
-							<div class="search__wrapper">
-								<div class="headerSearch " itemscope="" itemtype="http://schema.org/WebSite">
-									<meta itemprop="url" content="https://www.jadejade.com.br/">
-									<form id="searchFormHeader" autocomplete="off" method="get" action="/busca" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
-										<meta itemprop="target" content="https://www.jadejade.com.br/Busca?busca={busca}">
-
-
-										<button class="btSearch greenBack" type="button" id="btnBusca">
-											buscar <i class="icon isearch"></i>
-										</button>
-										<input type="text" value="" class="inputSearch ac_input" id="txtBuscaPrincipal" itemprop="query-input" name="busca" data-placeholder="Busque aqui.." autocomplete="off" placeholder="Busque aqui..">
-
-
-										<span class="search__close"><i class="fal fa-times"></i></span>
-									</form>
-								</div>
-
-							</div>
+							<form>
+								<input class="config__search--input" type="text" placeholder="Buscar">
+								<button type="submit">
+									<i class="icon__search"></i>
+								</button>
+							</form>
 						</li>
 
 						<li class="config__wishlist">
 							<span>
-								<i class="icon__search"></i>
+								<i class="icon__wishlist"></i>
 							</span>
 						</li>
 
@@ -79,15 +65,10 @@
 								<div class="headerLogin">
 									<div class="loginHead">
 
-										<span class="textloginp usuario_identificado" style="display:none">
-											Olá <span>{{usuario}} | </span>
-											<a class="fbits-login-link-sair" href="#" onclick="carrinhoLoginSairNovoCheckout(); return false;" rel="nofollow">Sair</a>
-										</span>
-
 										<span class="textloginp usuario_nao_identificado">
 											Olá <span>Visitante</span>, Identifique-se
-											<a class="fbits-login-link-login" href="https://checkout.jadejade.com.br/Login/Authenticate" rel="nofollow">aqui</a>
-											<a class="fbits-login-link-cadastro" href="https://checkout.jadejade.com.br/Login/Cadastro" rel="nofollow">Registre-se</a>
+											<a class="fbits-login-link-login" href="#" rel="nofollow">aqui</a>
+											<a class="fbits-login-link-cadastro" href="#" rel="nofollow">Registre-se</a>
 										</span>
 									</div>
 								</div>
@@ -96,9 +77,9 @@
 
 							<div class="login__box">
 								<ul>
-									<li><a href="https://checkout.jadejade.com.br/Login/Authenticate" class="login__button">Entrar</a></li>
-									<li><a href="https://checkout.jadejade.com.br/login/cadastro">Cadastre-se</a></li>
-									<li><a href="https://checkout.jadejade.com.br/MinhaConta/Pedido/">Meus Pedidos</a></li>
+									<li><a href="#" class="login__button">Entrar</a></li>
+									<li><a href="#">Cadastre-se</a></li>
+									<li><a href="#">Meus Pedidos</a></li>
 								</ul>
 							</div>
 						</li>
@@ -108,32 +89,117 @@
 								<i class="icon__cart"></i>
 							</div>
 
-							<div class="cart__wrapper">
-								<div id="fbits-resumo-carrinho" class="carrinho carrinhoHead"><a href="https://checkout.jadejade.com.br/"><i class="icon icart"></i><span class="minicart-qtde-itens">0</span> <span class="minicart-txt-itens">Carrinho Vazio</span></a></div>
-
-							</div>
-
 							<div id="mini__cart">
 								<div class="cart__close"><i class="fal fa-times"></i></div>
-								<div class="finish__buy"><a href="https://checkout.jadejade.com.br/">Finalizar compra</a></div>
+								<div class="finish__buy"><a href="#">Finalizar compra</a></div>
 							</div>
 							<div class="mini__cart__mask" style="display:none;width: 100%;height: 100%;background-color: rgba(0,0,0,.5);position: fixed;z-index: 10;top: 0px;left: 0px;cursor:pointer"></div>
 						</li>
 
 						<li class="config__flag">
 							<i class="flag__icon"></i>
+							<select name="" id="">
+								<option value="Português, BR">Português, BR </option>
+								<option value="Inglês">Inglês </option>
+								<option value="Espanhol">Espanhol </option>
+							</select>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
+
+		<div class="header__mobile">
+			<div class="header__container">
+				<div class="header__row">
+					<div class="header__tabs">
+						<!-- Adicionei um ID para facilitar a seleção -->
+						<svg id="headerTabs" class="svg-inline--fa fa-bars" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+							<path fill="#D2D2D2" d="M0 80c0-8.8 7.2-16 16-16H432c8.8 0 16 7.2 16 16s-7.2 16-16 16H16C7.2 96 0 88.8 0 80zM0 240c0-8.8 7.2-16 16-16H432c8.8 0 16 7.2 16 16s-7.2 16-16 16H16c-8.8 0-16-7.2-16-16zM448 400c0 8.8-7.2 16-16 16H16c-8.8 0-16-7.2-16-16s7.2-16 16-16H432c8.8 0 16 7.2 16 16z"></path>
+						</svg>
+					</div>
+
+					<div class="header__logo">
+						<a href="/">
+							<img src="/parte1/img/svg/furia_esports_logo_vector.svg" alt="FURIA">
+						</a>
+					</div>
+
+					<div class="header__config">
+						<ul>
+							<li class="config__shop">
+								<div class="cart__icon">
+									<a href="#">
+										<i class="icon__cart"></i>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="header__menu">
+						<div class="menu__top">
+							<div class="menu__logo">
+								<a href="/">
+									<img src="/parte1/img/svg/furia_esports_logo_vector.svg" alt="FURIA">
+								</a>
+							</div>
+
+							<!-- Adicionei uma classe para fechar o menu -->
+							<div class="menu__close">
+								<svg class="svg-inline--fa fa-times" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+									<path fill="currentColor" d="M324.5 411.1c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L214.6 256 347.1 123.5c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L192 233.4 59.5 100.9c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6L169.4 256 36.9 388.5c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0L192 278.6 324.5 411.1z"></path>
+								</svg>
+							</div>
+						</div>
+
+						<div class="menu__middle">
+							<div class="middle__account"><a href="#">
+									<div class="account__icon"><img src="../parte1/img/svg/icon_user.svg" alt="Ícone de uma pessoa"></div>
+									<div class="account__text"><span>Login</span></div>
+								</a></div>
+
+							<div class="middle__requests">
+								<a href="#/MinhaConta/Pedido/">
+									<div class="requests__icon">
+										<i class="icon__box"></i>
+									</div>
+
+									<div class="requests__text">
+										<span>Meus Pedidos</span>
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="menu__wrapper">
+							<ul class="menu">
+
+								<li class="item  raiz item0 hasChild">
+									<a href="#" class="hasChild">Shop all</a>
+									<div class="arrow__down"></div>
+								</li>
+								<li class="item  raiz item0 hasChild">
+									<a href="#" class="hasChild">About</a>
+									<div class="arrow__down"></div>
+								</li>
+							</ul>
+						</div>
+						<div class="menu__bottom">
+							<i class="flag__icon"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</header>
+
 	<main class="main-content">
 		<section class="fullbanner">
 			<div class="fullbanner__container">
 				<div class="fullbanner__slide">
 					<div class="fullbanner__item">
-						<a href="/">
+						<a href="#">
 
 							<picture>
 								<source media="(min-width: 769px)" srcset="./img/mainBanner-D.png">
@@ -143,17 +209,679 @@
 						</a>
 						<div class="fullbanner__text">
 							<h1 class="fullbanner__title">FURIA DROP 01</h1>
-							<a class="fullbanner__link" href="/">
+							<a class="fullbanner__link" href="#">
 								Compre agora
-								<span class="fullbanner__link-icon">
-
-								</span>
+								<span class="fullbanner__link-icon"></span>
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<section class="brands">
+			<div class="brands__container container">
+				<ul class="brands__list">
+					<li class="brands__item">
+						<img src="/parte1/img/svg/brand_Rivalry.svg" alt="Rivalry" title="Rivalry">
+					</li>
+					<li class="brands__item">
+						<img src="/parte1/img/svg/brand_AOC.svg" alt="AOC" title="AOC">
+					</li>
+					<li class="brands__item">
+						<img src="/parte1/img/svg/brand_HyperX.svg" alt="HyperX" title="HyperX">
+					</li>
+					<li class="brands__item">
+						<img src="/parte1/img/svg/brand_Gamerscard.svg" alt="Gamerscard" title="Gamerscard">
+					</li>
+					<li class="brands__item">
+						<img src="/parte1/img/svg/brand_ClearBrazil.svg" alt="ClearBrazil" title="ClearBrazil">
+					</li>
+					<li class="brands__item">
+						<img src="/parte1/img/svg/brand_Legion.svg" alt="Legion" title="Legion">
+					</li>
+					<li class="brands__item">
+						<img src="/parte1/img/svg/brand_Nike.svg" alt="Nike" title="Nike">
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="showcase">
+			<div class="showcase__container container">
+				<div class="showcase__row">
+					<div class="showcase__title">
+						<h2>Lançamentos</h2>
+						<a href="#">Ver tudo
+							<span class="showcase__title-icon"></span>
+						</a>
+					</div>
+
+					<div class="showcase__wrapper">
+						<span id="product-list__page-1" class="product-list">
+							<div class="product-list__item ">
+								<!-- BEGIN TEMPLATE -->
+								<div id="produto-spot-item" class="spot first">
+									<div class="product-item__content">
+										<a class="product-item__link" href="#">
+											<div class="product-item__image">
+												<img id="produto-spot-imagem-1" src="./img/furia_product-camisa_furia.png" alt="Camisa Furia Preta" title="Camisa Furia Preta" class="product-item__image--primary product-item__image--primary" />
+												<img id="produto-spot-imagem-2" style="display:none" src="./img/furia_product-camisa_furia.png" alt="Camisa Furia Preta" title="Camisa Furia Preta" class="product-item__image--primary product-item__image--secondary" />
+											</div>
+											<div class="product-item__tags"></div>
+										</a>
+
+										<div class="product-item__details">
+											<a class="product-item__link--details" href="#">
+												<h2 class="product-item__title">
+													Camisa Furia Preta
+												</h2>
+												<div class="product-item__price">
+													<input type="hidden" />
+
+													<div class="product-item__price--current product-item__price--with-original">
+														<span style="display:none;" class="product-item__discount-percentage">
+															20%
+														</span>
+														<span class="product-item__currency">R$</span>
+														<span class="product-item__amount">189,99</span>
+														<span class="product-item__payment-method">à vista</span>
+														<div class="product-item__price--original">
+															<span class="product-item__currency">R$</span>
+															<span class="product-item__amount">249,99</span>
+														</div>
+													</div>
+													<div class="product-item__installments">
+														ou até
+														<span class="product-item__installments-count">3</span>
+														<span class="product-item__installments-multiplier">x</span>
+														sem juros
+													</div>
+												</div>
+											</a>
+											<div class="product-item__buttons">
+												<div class="product-item__sizes product-item__attributes"></div>
+												<div class="product-item__actions">
+													<div class="spot__checkout">
+														<div class="spot__variations">
+															<div class="item-size">
+																<div class="attributes__item" value="P">P</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="M">M</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="G">G</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="GG">GG</div>
+															</div>
+
+														</div>
+													</div>
+													<a href="#" id="spot-button--buy" class="button button--add">
+														Comprar
+														<i class="icon button--add-cart"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-list__item " data-page-url="/?pagina=1">
+								<!-- BEGIN TEMPLATE -->
+								<div id="produto-spot-item" class="spot first">
+									<div class="product-item__content">
+										<a class="product-item__link" href="#">
+											<div class="product-item__image">
+												<img id="produto-spot-imagem-1" src="./img/furia_product-blusa_furia.png" alt="Camisa Furia Preta" title="Blusa Furia Preta" class="product-item__image--primary product-item__image--primary" />
+												<img id="produto-spot-imagem-2" style="display:none" src="./img/furia_product-blusa_furia.png" alt="Blusa Furia Preta" title="Blusa Furia Preta" class="product-item__image--primary product-item__image--secondary" />
+											</div>
+											<div class="product-item__tags"></div>
+										</a>
+
+										<div class="product-item__details">
+											<a class="product-item__link--details" href="#">
+												<h2 class="product-item__title">
+													Blusa Furia Preta
+												</h2>
+												<div class="product-item__price">
+													<input type="hidden" />
+
+													<div class="product-item__price--current product-item__price--with-original">
+														<span style="display:none;" class="product-item__discount-percentage">
+															20%
+														</span>
+														<span class="product-item__currency">R$</span>
+														<span class="product-item__amount">1.789,99</span>
+														<span class="product-item__payment-method">à vista</span>
+														<div class="product-item__price--original">
+															<span class="product-item__currency">R$</span>
+															<span class="product-item__amount">9.999,99</span>
+														</div>
+													</div>
+													<div class="product-item__installments">
+														ou até
+														<span class="product-item__installments-count">3</span>
+														<span class="product-item__installments-multiplier">x</span>
+														sem juros
+													</div>
+												</div>
+											</a>
+											<div class="product-item__buttons">
+												<div class="product-item__sizes product-item__attributes"></div>
+												<div class="product-item__actions">
+													<div class="spot__checkout">
+														<div class="spot__variations">
+															<div class="item-size">
+																<div class="attributes__item" value="P">P</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="M">M</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="G">G</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="GG">GG</div>
+															</div>
+
+														</div>
+													</div>
+													<a href="#" id="spot-button--buy" class="button button--add">
+														Comprar
+														<i class="icon button--add-cart"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-list__item " data-page-url="/?pagina=1">
+								<!-- BEGIN TEMPLATE -->
+								<div id="produto-spot-item" class="spot first">
+									<div class="product-item__content">
+										<a class="product-item__link" href="#">
+											<div class="product-item__image">
+												<img id="produto-spot-imagem-1" src="./img/furia_product-camisa_furia_azul.png" alt="Camisa Furia Preta" title="Camisa Furia Azul" class="product-item__image--primary product-item__image--primary" />
+												<img id="produto-spot-imagem-2" style="display:none" src="./img/furia_product-camisa_furia_azul.png" alt="Camisa Furia Azul" title="Camisa Furia Azul" class="product-item__image--primary product-item__image--secondary" />
+											</div>
+											<div class="product-item__tags"></div>
+										</a>
+
+										<div class="product-item__details">
+											<a class="product-item__link--details" href="#">
+												<h2 class="product-item__title">
+													Camisa Furia Azul
+												</h2>
+												<div class="product-item__price">
+													<input type="hidden" />
+
+													<div class="product-item__price--current product-item__price--with-original">
+														<span style="display:none;" class="product-item__discount-percentage">
+															20%
+														</span>
+														<span class="product-item__currency">R$</span>
+														<span class="product-item__amount">189,99</span>
+														<span class="product-item__payment-method">à vista</span>
+														<div class="product-item__price--original">
+															<span class="product-item__currency">R$</span>
+															<span class="product-item__amount">249,99</span>
+														</div>
+													</div>
+													<div class="product-item__installments">
+														ou até
+														<span class="product-item__installments-count">3</span>
+														<span class="product-item__installments-multiplier">x</span>
+														sem juros
+													</div>
+												</div>
+											</a>
+											<div class="product-item__buttons">
+												<div class="product-item__sizes product-item__attributes"></div>
+												<div class="product-item__actions">
+													<div class="spot__checkout">
+														<div class="spot__variations">
+															<div class="item-size">
+																<div class="attributes__item" value="P">P</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="M">M</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="G">G</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="GG">GG</div>
+															</div>
+
+														</div>
+													</div>
+													<a href="#" id="spot-button--buy" class="button button--add">
+														Comprar
+														<i class="icon button--add-cart"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-list__item " data-page-url="/?pagina=1">
+								<!-- BEGIN TEMPLATE -->
+								<div id="produto-spot-item" class="spot first">
+									<div class="product-item__content">
+										<a class="product-item__link" href="#">
+											<div class="product-item__image">
+												<img id="produto-spot-imagem-1" src="./img/furia_product-blusa_furia.png" alt="Camisa Furia Preta" title="Blusa Furia Preta" class="product-item__image--primary product-item__image--primary" />
+												<img id="produto-spot-imagem-2" style="display:none" src="./img/furia_product-blusa_furia.png" alt="Blusa Furia Preta" title="Blusa Furia Preta" class="product-item__image--primary product-item__image--secondary" />
+											</div>
+											<div class="product-item__tags"></div>
+										</a>
+
+										<div class="product-item__details">
+											<a class="product-item__link--details" href="#">
+												<h2 class="product-item__title">
+													Blusa Furia Preta
+												</h2>
+												<div class="product-item__price">
+													<input type="hidden" />
+
+													<div class="product-item__price--current product-item__price--with-original">
+														<span style="display:none;" class="product-item__discount-percentage">
+															20%
+														</span>
+														<span class="product-item__currency">R$</span>
+														<span class="product-item__amount">1.789,99</span>
+														<span class="product-item__payment-method">à vista</span>
+														<div class="product-item__price--original">
+															<span class="product-item__currency">R$</span>
+															<span class="product-item__amount">9.999,99</span>
+														</div>
+													</div>
+													<div class="product-item__installments">
+														ou até
+														<span class="product-item__installments-count">3</span>
+														<span class="product-item__installments-multiplier">x</span>
+														sem juros
+													</div>
+												</div>
+											</a>
+											<div class="product-item__buttons">
+												<div class="product-item__sizes product-item__attributes"></div>
+												<div class="product-item__actions">
+													<div class="spot__checkout">
+														<div class="spot__variations">
+															<div class="item-size">
+																<div class="attributes__item" value="P">P</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="M">M</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="G">G</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="GG">GG</div>
+															</div>
+
+														</div>
+													</div>
+													<a href="#" id="spot-button--buy" class="button button--add">
+														Comprar
+														<i class="icon button--add-cart"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</span>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="youtube">
+			<div class="youtube container">
+				<div class="youtube__row">
+					<div class="youtube__title">
+						<h2>Youtube</h2>
+					</div>
+					<div class="youtube__iframe">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/-_1KSc48rxg?si=qcp_LaSSGj_RK1TA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="showcase">
+			<div class="showcase__container container">
+				<div class="showcase__row">
+					<div class="showcase__title">
+						<h2>Novidades</h2>
+						<a href="#">Ver tudo
+							<span class="showcase__title-icon"></span>
+						</a>
+					</div>
+
+					<div class="showcase__wrapper">
+						<span id="product-list__page-1" class="product-list">
+							<div class="product-list__item ">
+								<!-- BEGIN TEMPLATE -->
+								<div id="produto-spot-item" class="spot first">
+									<div class="product-item__content">
+										<a class="product-item__link" href="#">
+											<div class="product-item__image">
+												<img id="produto-spot-imagem-1" src="./img/furia_product-camisa_furia.png" alt="Camisa Furia Preta" title="Camisa Furia Preta" class="product-item__image--primary product-item__image--primary" />
+												<img id="produto-spot-imagem-2" style="display:none" src="./img/furia_product-camisa_furia.png" alt="Camisa Furia Preta" title="Camisa Furia Preta" class="product-item__image--primary product-item__image--secondary" />
+											</div>
+											<div class="product-item__tags"></div>
+										</a>
+
+										<div class="product-item__details">
+											<a class="product-item__link--details" href="#">
+												<h2 class="product-item__title">
+													Camisa Furia Preta
+												</h2>
+												<div class="product-item__price">
+													<input type="hidden" />
+
+													<div class="product-item__price--current product-item__price--with-original">
+														<span style="display:none;" class="product-item__discount-percentage">
+															20%
+														</span>
+														<span class="product-item__currency">R$</span>
+														<span class="product-item__amount">189,99</span>
+														<span class="product-item__payment-method">à vista</span>
+														<div class="product-item__price--original">
+															<span class="product-item__currency">R$</span>
+															<span class="product-item__amount">249,99</span>
+														</div>
+													</div>
+													<div class="product-item__installments">
+														ou até
+														<span class="product-item__installments-count">3</span>
+														<span class="product-item__installments-multiplier">x</span>
+														sem juros
+													</div>
+												</div>
+											</a>
+											<div class="product-item__buttons">
+												<div class="product-item__sizes product-item__attributes"></div>
+												<div class="product-item__actions">
+													<div class="spot__checkout">
+														<div class="spot__variations">
+															<div class="item-size">
+																<div class="attributes__item" value="P">P</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="M">M</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="G">G</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="GG">GG</div>
+															</div>
+
+														</div>
+													</div>
+													<a href="#" id="spot-button--buy" class="button button--add">
+														Comprar
+														<i class="icon button--add-cart"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-list__item " data-page-url="/?pagina=1">
+								<!-- BEGIN TEMPLATE -->
+								<div id="produto-spot-item" class="spot first">
+									<div class="product-item__content">
+										<a class="product-item__link" href="#">
+											<div class="product-item__image">
+												<img id="produto-spot-imagem-1" src="./img/furia_product-blusa_furia.png" alt="Camisa Furia Preta" title="Blusa Furia Preta" class="product-item__image--primary product-item__image--primary" />
+												<img id="produto-spot-imagem-2" style="display:none" src="./img/furia_product-blusa_furia.png" alt="Blusa Furia Preta" title="Blusa Furia Preta" class="product-item__image--primary product-item__image--secondary" />
+											</div>
+											<div class="product-item__tags"></div>
+										</a>
+
+										<div class="product-item__details">
+											<a class="product-item__link--details" href="#">
+												<h2 class="product-item__title">
+													Blusa Furia Preta
+												</h2>
+												<div class="product-item__price">
+													<input type="hidden" />
+
+													<div class="product-item__price--current product-item__price--with-original">
+														<span style="display:none;" class="product-item__discount-percentage">
+															20%
+														</span>
+														<span class="product-item__currency">R$</span>
+														<span class="product-item__amount">1.789,99</span>
+														<span class="product-item__payment-method">à vista</span>
+														<div class="product-item__price--original">
+															<span class="product-item__currency">R$</span>
+															<span class="product-item__amount">9.999,99</span>
+														</div>
+													</div>
+													<div class="product-item__installments">
+														ou até
+														<span class="product-item__installments-count">3</span>
+														<span class="product-item__installments-multiplier">x</span>
+														sem juros
+													</div>
+												</div>
+											</a>
+											<div class="product-item__buttons">
+												<div class="product-item__sizes product-item__attributes"></div>
+												<div class="product-item__actions">
+													<div class="spot__checkout">
+														<div class="spot__variations">
+															<div class="item-size">
+																<div class="attributes__item" value="P">P</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="M">M</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="G">G</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="GG">GG</div>
+															</div>
+
+														</div>
+													</div>
+													<a href="#" id="spot-button--buy" class="button button--add">
+														Comprar
+														<i class="icon button--add-cart"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-list__item " data-page-url="/?pagina=1">
+								<!-- BEGIN TEMPLATE -->
+								<div id="produto-spot-item" class="spot first">
+									<div class="product-item__content">
+										<a class="product-item__link" href="#">
+											<div class="product-item__image">
+												<img id="produto-spot-imagem-1" src="./img/furia_product-camisa_furia_azul.png" alt="Camisa Furia Preta" title="Camisa Furia Azul" class="product-item__image--primary product-item__image--primary" />
+												<img id="produto-spot-imagem-2" style="display:none" src="./img/furia_product-camisa_furia_azul.png" alt="Camisa Furia Azul" title="Camisa Furia Azul" class="product-item__image--primary product-item__image--secondary" />
+											</div>
+											<div class="product-item__tags"></div>
+										</a>
+
+										<div class="product-item__details">
+											<a class="product-item__link--details" href="#">
+												<h2 class="product-item__title">
+													Camisa Furia Azul
+												</h2>
+												<div class="product-item__price">
+													<input type="hidden" />
+
+													<div class="product-item__price--current product-item__price--with-original">
+														<span style="display:none;" class="product-item__discount-percentage">
+															20%
+														</span>
+														<span class="product-item__currency">R$</span>
+														<span class="product-item__amount">189,99</span>
+														<span class="product-item__payment-method">à vista</span>
+														<div class="product-item__price--original">
+															<span class="product-item__currency">R$</span>
+															<span class="product-item__amount">249,99</span>
+														</div>
+													</div>
+													<div class="product-item__installments">
+														ou até
+														<span class="product-item__installments-count">3</span>
+														<span class="product-item__installments-multiplier">x</span>
+														sem juros
+													</div>
+												</div>
+											</a>
+											<div class="product-item__buttons">
+												<div class="product-item__sizes product-item__attributes"></div>
+												<div class="product-item__actions">
+													<div class="spot__checkout">
+														<div class="spot__variations">
+															<div class="item-size">
+																<div class="attributes__item" value="P">P</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="M">M</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="G">G</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="GG">GG</div>
+															</div>
+
+														</div>
+													</div>
+													<a href="#" id="spot-button--buy" class="button button--add">
+														Comprar
+														<i class="icon button--add-cart"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-list__item " data-page-url="/?pagina=1">
+								<!-- BEGIN TEMPLATE -->
+								<div id="produto-spot-item" class="spot first">
+									<div class="product-item__content">
+										<a class="product-item__link" href="#">
+											<div class="product-item__image">
+												<img id="produto-spot-imagem-1" src="./img/furia_product-blusa_furia.png" alt="Camisa Furia Preta" title="Blusa Furia Preta" class="product-item__image--primary product-item__image--primary" />
+												<img id="produto-spot-imagem-2" style="display:none" src="./img/furia_product-blusa_furia.png" alt="Blusa Furia Preta" title="Blusa Furia Preta" class="product-item__image--primary product-item__image--secondary" />
+											</div>
+											<div class="product-item__tags"></div>
+										</a>
+
+										<div class="product-item__details">
+											<a class="product-item__link--details" href="#">
+												<h2 class="product-item__title">
+													Blusa Furia Preta
+												</h2>
+												<div class="product-item__price">
+													<input type="hidden" />
+
+													<div class="product-item__price--current product-item__price--with-original">
+														<span style="display:none;" class="product-item__discount-percentage">
+															20%
+														</span>
+														<span class="product-item__currency">R$</span>
+														<span class="product-item__amount">1.789,99</span>
+														<span class="product-item__payment-method">à vista</span>
+														<div class="product-item__price--original">
+															<span class="product-item__currency">R$</span>
+															<span class="product-item__amount">9.999,99</span>
+														</div>
+													</div>
+													<div class="product-item__installments">
+														ou até
+														<span class="product-item__installments-count">3</span>
+														<span class="product-item__installments-multiplier">x</span>
+														sem juros
+													</div>
+												</div>
+											</a>
+											<div class="product-item__buttons">
+												<div class="product-item__sizes product-item__attributes"></div>
+												<div class="product-item__actions">
+													<div class="spot__checkout">
+														<div class="spot__variations">
+															<div class="item-size">
+																<div class="attributes__item" value="P">P</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="M">M</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="G">G</div>
+															</div>
+
+															<div class="item-size">
+																<div class="attributes__item" value="GG">GG</div>
+															</div>
+
+														</div>
+													</div>
+													<a href="#" id="spot-button--buy" class="button button--add">
+														Comprar
+														<i class="icon button--add-cart"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</span>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
 	</main>
 
 	<div class="newsletter" id="fbits-cadastro-newsletter">
@@ -209,9 +937,9 @@
 						<span>Institucional</span>
 
 						<ul>
-							<li><a href="/">Quem somos</a></li>
-							<li><a href="/">Contato</a></li>
-							<li><a href="/">Central de Atendimento</a></li>
+							<li><a href="#">Quem somos</a></li>
+							<li><a href="#">Contato</a></li>
+							<li><a href="#">Central de Atendimento</a></li>
 						</ul>
 					</div>
 
@@ -223,7 +951,7 @@
 							<li><span>Horário de Atendimento</span></li>
 							<li><span>De Segunda à Sexta</span></li>
 							<li><span>das 09h às 18h</span></li>
-							<li><a href="/" target="_blank" rel="noopener noreferer">atendimento@loremipsum.com</a></li>
+							<li><a href="#" target="_blank" rel="noopener noreferer">atendimento@loremipsum.com</a></li>
 							<li><a href="https://api.whatsapp.com/send?phone=" target="_blank" rel="noopener noreferer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
 						</ul>
 					</div>
@@ -232,11 +960,11 @@
 						<span>Políticas</span>
 
 						<ul>
-							<li><a href="/">Prazos e Entregas</a></li>
-							<li><a href="/">Formas de pagamento</a></li>
-							<li><a href="/">Promoções e Descontos</a></li>
-							<li><a href="/">Política de privacidade</a></li>
-							<li><a href="/">Trocas e devoluções</a></li>
+							<li><a href="#">Prazos e Entregas</a></li>
+							<li><a href="#">Formas de pagamento</a></li>
+							<li><a href="#">Promoções e Descontos</a></li>
+							<li><a href="#">Política de privacidade</a></li>
+							<li><a href="#">Trocas e devoluções</a></li>
 						</ul>
 					</div>
 
@@ -296,5 +1024,9 @@
 			</div>
 		</div>
 	</footer>
-
+	<!-- Inclua o jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- Inclua o JS do Slick Carousel -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+	<script src="js/script.js" type="text/javascript"></script>
 </body>
