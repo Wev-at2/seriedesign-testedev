@@ -1729,7 +1729,7 @@ input[type="button"] {
     /* Other Elements */
     .fixed__buttons {
         right: 20px;
-        bottom: 120px;
+        bottom: 100px;
     }
 
     .product-item__content .product-item__link--details h2 {
