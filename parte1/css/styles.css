@@ -796,8 +796,12 @@ input[type="button"] {
 .fixed__buttons {
     position: fixed;
     right: 66px;
-    bottom: 124px;
+    bottom: 110px;
     z-index: 1;
+    cursor: pointer;
+    height: 3.25rem;
+    width: 3.25rem;
+    z-index: 99999;
 }
 .fixed__buttons .up__button {
     display: none;
@@ -813,9 +817,14 @@ input[type="button"] {
     font-size: 30px;
     cursor: pointer;
 }
+.fixed__buttons .whatsapp__wrapper {
+    cursor: pointer;
+    height: 3.25rem;
+    width: 3.25rem;
+}
 .fixed__buttons .whatsapp__wrapper a {
     font-size: 30px;
-    background-color: #fff;
+    background: #000000;
     border-radius: 100%;
     width: 50px;
     height: 50px;
@@ -826,8 +835,7 @@ input[type="button"] {
     text-decoration: none;
 }
 .fixed__buttons .whatsapp__wrapper a .whatsapp__icon {
-    background: url("https://recursos.jadejade.com.br/i/sd/logo-jade.png")
-        no-repeat;
+    background: url("../img/svg/whatsapp_2.svg") no-repeat;
     background-size: cover;
     background-position: center;
     width: 50px;
@@ -1721,7 +1729,7 @@ input[type="button"] {
     /* Other Elements */
     .fixed__buttons {
         right: 20px;
-        bottom: 135px;
+        bottom: 120px;
     }
 
     .product-item__content .product-item__link--details h2 {
@@ -1774,6 +1782,9 @@ input[type="button"] {
     .footer .footer__bottom .footer__container .footer__row .footer__develop p {
         text-align: center;
     }
+    .footer .footer__top .footer__menu:nth-child(2) li:nth-child(6) a {
+        justify-content: center;
+    }
 
     body #pipe-chat-button-container {
         margin: 60px 15px;
@@ -1799,7 +1810,10 @@ input[type="button"] {
         font-size: 10px;
     }
     .product-item__link--details .product-item__installments {
-        margin: 0px 0px 0px 18px;
+        margin: 0;
+    }
+    .youtube__title h2 {
+        font-size: 1.2rem;
     }
     .fullbanner .fullbanner__title {
         font-size: 2rem;
