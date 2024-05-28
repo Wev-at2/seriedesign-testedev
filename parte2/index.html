@@ -25,7 +25,16 @@
 		<!--- RESPOSTA 1 ---->
 		<script>
 			console.log('resposta 1');
-			//insira a resposta aqui.
+
+			const questionOne = [];
+
+			for (let i = 0; i <= 100; i++) {
+				if (i % 7 === 0) {
+					questionOne.push(i);
+				}
+			}
+
+			console.log(questionOne);
 		</script>
 
 		<div class="border"></div>
@@ -34,7 +43,24 @@
 		<!--- RESPOSTA 2 ---->
 		<script>
 			console.log('resposta 2');
-			//insira a resposta aqui.
+
+			const texto = "Texto repetido";
+			const vezes = 10;
+			const resultado = textRepeat(texto, vezes);
+
+			function textRepeat(texto, vezes) {
+				let resultado = "";
+
+				for (let i = 0; i < vezes; i++) {
+					resultado += texto + "!".repeat(i + 1);
+					if (i < vezes - 1) {
+						resultado += ", ";
+					}
+				}
+				return resultado;
+			}
+			console.log(resultado);
+
 		</script>
 
 		<div class="border"></div>
@@ -49,7 +75,13 @@
 		<!--- RESPOSTA 3 ---->
 		<script>
 			console.log('resposta 3');
-			//insira a resposta aqui.
+
+			const divPai = document.querySelector('.pai');
+			const divFilho = document.querySelector('.filho');
+
+			divPai.appendChild(divFilho);
+			console.log(divPai);
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 4 ---->
@@ -61,14 +93,22 @@
 			<li>inserir uma classe 'last' no último parágrafo</li>
 		</ol>
 		<!--- RESPOSTA 4 ---->
-		<div style="display: none;">
+		<div class="questao_quatro" style="display: none;">
 			<p>texto</p>
 			<p>texto</p>
 			<p>texto</p>
 		</div>
 		<script>
 			console.log('resposta 4');
-			//insira a resposta aqui.
+
+			const divQuestaoQuatro = document.querySelector('.questao_quatro');
+			const paragraph = divQuestaoQuatro.querySelectorAll('p');
+
+			paragraph[1].innerText = 'Texto alterado';
+			paragraph[2].classList.add('last');
+
+			console.log(divQuestaoQuatro);
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 5 ---->
@@ -77,7 +117,17 @@
 		<!--- RESPOSTA 5 ---->
 		<script>
 			console.log('resposta 5');
-			//insira a resposta aqui.
+
+			const idade1 = 27;
+			const idade2 = 13;
+
+			function verificaIdade(idade) {
+				return `Idade ${idade}: ${idade >= 18 ? "maior de idade" : "menor de idade"}`;
+			}
+
+			console.log(verificaIdade(idade1));
+			console.log(verificaIdade(idade2));
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 6 ---->
@@ -96,7 +146,18 @@
 				nomeObj: 'Mouse',
 				pesoObj: '150g'
 			}
-			//insira a resposta aqui.
+
+			function modificarObjeto(objeto) {
+				objeto.nomeObj = 'Teclado';
+				objeto.pesoObj = '500g';
+
+				const array = [objeto.nomeObj, objeto.pesoObj];
+
+				console.log(array);
+			}
+
+			modificarObjeto(obj);
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 7 ---->
@@ -110,7 +171,25 @@
 		<!--- RESPOSTA 7 ---->
 		<script>
 			console.log('resposta 7');
-			//insira a resposta aqui.
+
+			// Texto fornecido
+			const texto1 = 'Eu quero trabalhar na Seri.e Design';
+
+			// O texto de trás para frente substituindo os espaços em branco por pontos de exclamação
+			const textoInvertido = texto1.split('').reverse().join('').replace(/\s/g, '!');
+			console.log('Texto invertido com espaços substituídos:', textoInvertido);
+
+			// A última palavra do texto
+			const ultimaPalavra = texto1.split(' ').pop();
+			console.log('Última palavra do texto:', ultimaPalavra);
+
+			// A quantidade de caracteres do texto
+			const quantidadeCaracteres = texto1.length;
+			console.log('Quantidade de caracteres do texto:', quantidadeCaracteres);
+
+			// O tipo de alguma variável criada acima
+			console.log('Tipo da variável "texto":', typeof texto1);
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 8 ---->
@@ -120,6 +199,7 @@
 
 		<p>faça uma função para adicionar o atributo 'data-id' em cada uma das divs, com o valor sendo a posição que se encontra a div na lista. Ex.: &lt;div data-id="2"&gt;</p>.
 		<!--- RESPOSTA 8 ---->
+		<span class="questao_8"></span>
 
 		<div></div>
 		<div></div>
@@ -128,7 +208,24 @@
 		<div></div>
 		<script>
 			console.log('resposta 8');
-			//insira a resposta aqui.
+
+			const todasDivs = document.querySelectorAll('div');
+			const preDivs = document.querySelector('.questao_8');
+			const divsLastFive = Array.from(todasDivs).slice(-5);
+
+			function adicionarDataId() {
+				divsLastFive.forEach((div, index) => {
+					div.setAttribute('data-id', index + 1);
+				});
+			}
+
+			adicionarDataId();
+
+			divsLastFive.forEach(div => {
+				// console.log(div.getAttribute('data-id'));
+				console.log(div.outerHTML);
+			});
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 9 ---->
@@ -153,7 +250,18 @@
 		</div>
 		<script>
 			console.log('resposta 9');
-			//insira a resposta aqui.
+
+			const categoria = document.querySelector('.content > ul > li');
+			const subcontainer = document.querySelector('.subcontainer');
+
+			categoria.addEventListener('click', function () {
+				const ulSubcategoria = document.querySelector('.subcontainer > ul');
+				ulSubcategoria.style.display = (ulSubcategoria.style.display === 'none') ? 'block' : 'none';
+				document.querySelector('.content').classList.toggle('active');
+				subcontainer.classList.toggle('active');
+			});
+			console.log(document.querySelector('.content').outerHTML);
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 10 ---->
@@ -164,7 +272,7 @@
 			function observer() {
 				var target = '';
 				var restSecs = 0;
-				var intervalObserver = setInterval(function() {
+				var intervalObserver = setInterval(function () {
 					target = document.querySelector('footer .content');
 					if ($(target).length >= 1 && restSecs <= 5) {
 						//do something
@@ -187,10 +295,66 @@
 		</ol>
 		<!--- RESPOSTA 10 ---->
 		<div>
-			<p style="color: #F00;">RESPOSTA: </p>
+			<p style="color: #F00;">RESPOSTA: Observa o código até encontrar o elemento. Quando encontrado, faz algo.</p>
 		</div>
 	</div>
 </body>
-<style>body {margin: 0;padding: 0;background: #eee;font-family: arial, sans-serif;}.container {background: #FFF;width: 100%;max-width: 1024px;margin: 0 auto;padding: 20px;}.container .border {width: 100%;margin: 40px auto;border-top: 1px solid #999;}.container h1 {font-size: 18px;text-align: center;margin: 30px;}.container ol,.container ul {margin: 0 20px;}.container p {font-size: 13px;line-height: 22px;padding: 0 30px;}.container li {font-size: 13px;line-height: 22px;}.container pre {background: #eee;border: 1px solid #000;padding: 15px;color: #000;margin: 20px auto;width: 70%;}.container pre code {margin: 0;}
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		background: #eee;
+		font-family: arial, sans-serif;
+	}
+
+	.container {
+		background: #FFF;
+		width: 100%;
+		max-width: 1024px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	.container .border {
+		width: 100%;
+		margin: 40px auto;
+		border-top: 1px solid #999;
+	}
+
+	.container h1 {
+		font-size: 18px;
+		text-align: center;
+		margin: 30px;
+	}
+
+	.container ol,
+	.container ul {
+		margin: 0 20px;
+	}
+
+	.container p {
+		font-size: 13px;
+		line-height: 22px;
+		padding: 0 30px;
+	}
+
+	.container li {
+		font-size: 13px;
+		line-height: 22px;
+	}
+
+	.container pre {
+		background: #eee;
+		border: 1px solid #000;
+		padding: 15px;
+		color: #000;
+		margin: 20px auto;
+		width: 70%;
+	}
+
+	.container pre code {
+		margin: 0;
+	}
 </style>
+
 </html>
